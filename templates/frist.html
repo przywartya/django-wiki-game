@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<h2>START: {{ first }}</h2></br>
+		<h2>END: {{ last }}</h2></br>
+		<a href = "{% url 'url_page' path first %}">{{ first }}</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-10">
+	<div class="row">
+		<div class="col-sm-7">
+		<div class="panel">
+        	<h1>{{ article_name }}</h1>
+      	</div>
+      </div>
+      <div class="col-sm-3">
+      	
+       </div>
+    </div>
+		{% for dict in links_list %}
+			<div class="col-sm-5">
+				<ul class="list-group">
+				{% for key,value in dict.items %}
+							<li class="list-group-item">
+								<a href = "{% url 'url_page' path value %}">
+									<h4 class="list-group-item-heading">{{ key }}</h4>
+								</a>
+							</li>	
+				{% endfor %}
+				</ul>
+			</div>
+		{% endfor %}
+</div>
+<div class="col-sm-2">
+	<div class="panel panel-success" style="position:fixed; width:100%;">
+            <div class="panel-heading">
+              <h3 class="panel-title">Your goal:</h3>
+            </div>
+            <div class="panel-body">
+              <strong>{{ target }}</strong>
+            </div>
+            <img src="https://wallpaperscraft.com/image/surface_background_plain_black_50697_480x800.jpg" style="position:fixed; height:100%;">
+
+    </div>
+	
+</div>
+{% endblock %}
+
